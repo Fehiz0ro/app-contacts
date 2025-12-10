@@ -16,6 +16,6 @@ sleep 10
 
 
 echo "Test du backend..."
-curl http://backend:5000/contacts
+curl http://localhost:5000/contacts
 
 echo "Déploiement terminé avec succès !"
