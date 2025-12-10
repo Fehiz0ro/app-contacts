@@ -7,8 +7,6 @@ services:
     container_name: backend
     ports:
       - "5000:5000"
-    networks:
-      - app-network
 
   frontend:
     build: ./frontend
@@ -17,25 +15,3 @@ services:
       - "8081:8080"
     depends_on:
       - backend
-    networks:
-      - app-network
-
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins__server
-    user: root
-    ports:
-      - "8080:8080"
-    networks:
-      - app-network
-    volumes:
-      - jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock  # permet à Jenkins de lancer Docker
-
-networks:
-  app-network:
-    driver: bridge
-    
-volumes:
-   jenkins_data:
-
