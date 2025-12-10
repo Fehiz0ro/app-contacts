@@ -35,4 +35,7 @@ services:
 networks:
   app-network:
     driver: bridge
+    
+volumes:
+   jenkins_data:
 
