@@ -11,10 +11,13 @@ docker-compose build
 echo "Démarrage des containers..."
 docker-compose up -d
 
-echo "Attendre 35 secondes..."
-sleep 35
+echo "Attendre 10 secondes..."
+sleep 10
+
+
+MYIP=$(ip -4 addr show enp0s3 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 echo "Test du backend..."
-curl http://192.168.3.173:5000/contacts
+curl http://$MYIP:5000/contacts
 
 echo "Déploiement terminé avec succès !"
