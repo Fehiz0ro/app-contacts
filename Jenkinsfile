@@ -15,7 +15,8 @@ pipeline {
         stage('Stop Containers') {
             steps {
                 script {
-                    sh 'docker-compose down || true'
+                    sh 'docker rm -f backend || true'
+                    sh 'docker rm -f frontend || true'
                 }
             }
         }
