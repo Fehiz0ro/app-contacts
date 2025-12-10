@@ -43,7 +43,7 @@ pipeline {
                     echo "Test du backend via curl..."
                     sh """
                     sleep 10
-                    curl -f http://localhost:${BACKEND_PORT}/contacts
+                    curl -f http://192.168.88.9:5000/contacts
                     """
                 }
             }
