@@ -14,9 +14,8 @@ docker-compose up -d
 echo "Attendre 10 secondes..."
 sleep 10
 
-MYIP=$(hostname -I | awk '{print $1}')
 
 echo "Test du backend..."
-curl http://$MYIP:5000/contacts
+curl http://backend:5000/contacts
 
 echo "Déploiement terminé avec succès !"
