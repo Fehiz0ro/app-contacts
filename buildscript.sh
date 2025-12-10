@@ -11,8 +11,8 @@ docker-compose build
 echo "Démarrage des containers..."
 docker-compose up -d
 
-echo "Attendre 10 secondes..."
-sleep 10
+echo "Attendre 35 secondes..."
+sleep 35
 
 echo "Test du backend..."
 curl http://192.168.3.173:5000/contacts
